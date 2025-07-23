@@ -12,9 +12,9 @@ import java.util.List;
 public interface WalletMapper {
     WalletModel toModel(Wallet entity);
 
-    WalletModel toEntity(WalletModel model);
+    Wallet toEntity(WalletModel model);
 
-    List<WalletModel> toModelList(List<WalletModel> entityList);
+    List<WalletModel> toModelList(List<Wallet> entityList);
 
-    List<WalletModel> toEntityList(List<WalletModel> modelList);
+    List<Wallet> toEntityList(List<WalletModel> modelList);
 }
