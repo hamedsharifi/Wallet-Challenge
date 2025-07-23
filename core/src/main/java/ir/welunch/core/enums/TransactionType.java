@@ -1,4 +1,4 @@
-package enums;
+package ir.welunch.core.enums;
 
 public enum TransactionType {
     DEPOSIT,

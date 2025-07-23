@@ -2,7 +2,7 @@ package ir.welunch.app.mapper;
 
 
 import ir.welunch.app.entity.Wallet;
-import model.WalletModel;
+import ir.welunch.core.model.WalletModel;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
 

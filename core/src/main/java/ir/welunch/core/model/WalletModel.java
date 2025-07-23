@@ -1,4 +1,4 @@
-package model;
+package ir.welunch.core.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

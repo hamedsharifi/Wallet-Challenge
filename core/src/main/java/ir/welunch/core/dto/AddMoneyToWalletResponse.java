@@ -1,4 +1,4 @@
-package dto;
+package ir.welunch.core.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

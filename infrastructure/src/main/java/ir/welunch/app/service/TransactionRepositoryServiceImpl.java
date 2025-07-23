@@ -4,9 +4,9 @@ import ir.welunch.app.entity.Transaction;
 import ir.welunch.app.mapper.TransactionMapper;
 import ir.welunch.app.repository.TransactionJpaRepository;
 import lombok.RequiredArgsConstructor;
-import model.TransactionModel;
+import ir.welunch.core.model.TransactionModel;
 import org.springframework.stereotype.Service;
-import repository.TransactionRepositoryService;
+import ir.welunch.core.repository.TransactionRepositoryService;
 
 import java.time.LocalDateTime;
 import java.util.List;

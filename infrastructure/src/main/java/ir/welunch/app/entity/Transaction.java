@@ -1,6 +1,6 @@
 package ir.welunch.app.entity;
 
-import enums.TransactionType;
+import ir.welunch.core.enums.TransactionType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

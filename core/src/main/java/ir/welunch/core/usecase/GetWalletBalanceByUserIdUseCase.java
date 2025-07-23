@@ -1,12 +1,12 @@
-package usecase;
+package ir.welunch.core.usecase;
 
-import dto.GetWalletBalanceRequest;
-import dto.GetWalletBalanceResponse;
-import exception.ApplicationException;
+import ir.welunch.core.dto.GetWalletBalanceRequest;
+import ir.welunch.core.dto.GetWalletBalanceResponse;
+import ir.welunch.core.exception.ApplicationException;
 import lombok.RequiredArgsConstructor;
-import model.WalletModel;
-import repository.WalletRepositoryService;
-import util.annotation.UseCase;
+import ir.welunch.core.model.WalletModel;
+import ir.welunch.core.repository.WalletRepositoryService;
+import ir.welunch.core.annotation.UseCase;
 
 @UseCase
 @RequiredArgsConstructor

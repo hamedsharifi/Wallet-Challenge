@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
-import util.annotation.CoreComponent;
-import util.annotation.UseCase;
+import ir.welunch.core.annotation.CoreComponent;
+import ir.welunch.core.annotation.UseCase;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"ir.welunch"},

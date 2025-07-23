@@ -1,7 +1,7 @@
 package ir.welunch.app.mapper;
 
 import ir.welunch.app.entity.Transaction;
-import model.TransactionModel;
+import ir.welunch.core.model.TransactionModel;
 import org.mapstruct.Builder;
 import org.mapstruct.Mapper;
 

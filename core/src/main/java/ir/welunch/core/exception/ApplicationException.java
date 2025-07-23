@@ -1,4 +1,4 @@
-package exception;
+package ir.welunch.core.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

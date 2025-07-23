@@ -1,4 +1,4 @@
-package dto;
+package ir.welunch.core.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

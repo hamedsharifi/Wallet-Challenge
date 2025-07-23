@@ -1,6 +1,6 @@
-package repository;
+package ir.welunch.core.repository;
 
-import model.WalletModel;
+import ir.welunch.core.model.WalletModel;
 
 import java.util.Optional;
 

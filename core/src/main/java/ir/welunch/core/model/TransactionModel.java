@@ -1,6 +1,6 @@
-package model;
+package ir.welunch.core.model;
 
-import enums.TransactionType;
+import ir.welunch.core.enums.TransactionType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

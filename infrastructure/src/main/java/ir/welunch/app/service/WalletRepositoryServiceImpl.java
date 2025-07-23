@@ -4,9 +4,9 @@ import ir.welunch.app.entity.Wallet;
 import ir.welunch.app.mapper.WalletMapper;
 import ir.welunch.app.repository.WalletJpaRepository;
 import lombok.RequiredArgsConstructor;
-import model.WalletModel;
+import ir.welunch.core.model.WalletModel;
 import org.springframework.stereotype.Service;
-import repository.WalletRepositoryService;
+import ir.welunch.core.repository.WalletRepositoryService;
 
 import java.util.Optional;
 

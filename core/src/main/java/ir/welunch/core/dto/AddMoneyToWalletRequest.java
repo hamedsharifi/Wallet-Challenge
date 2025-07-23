@@ -1,4 +1,4 @@
-package dto;
+package ir.welunch.core.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GetWalletBalanceRequest {
+public class AddMoneyToWalletRequest {
     private Long userId;
+    private Long amount;
 }
-
