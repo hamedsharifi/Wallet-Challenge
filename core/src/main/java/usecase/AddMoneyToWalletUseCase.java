@@ -29,6 +29,10 @@ public class AddMoneyToWalletUseCase {
         Long userId = request.getUserId();
         Long amount = request.getAmount();
 
+        if (userId == null || amount == null) {
+            throw new ApplicationException("bad_user_input", "You entered an invalid user id or amount");
+        }
+
         WalletModel wallet = walletRepositoryService.findByUserId(userId)
                 .orElseGet(() -> WalletModel.builder()
                         .userId(userId)
