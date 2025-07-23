@@ -40,7 +40,6 @@ public class AddMoneyToWalletUseCase {
             throw new ApplicationException("wallet_insufficient_balance", "Insufficient balance for withdrawal");
         }
 
-        // Generate referenceId
         String referenceId = UUID.randomUUID().toString();
 
         TransactionModel transaction = TransactionModel.builder()
