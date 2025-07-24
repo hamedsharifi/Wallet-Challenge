@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:9.4.0
+    container_name: wallet-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: wallet_db
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+      TZ: Asia/Tehran
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --default-time-zone='Asia/Tehran'
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wallet-app
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/wallet_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Tehran
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: mysecretpassword
+      TZ: Asia/Tehran
+
+volumes:
+  mysql_data:
