@@ -19,12 +19,12 @@ public class WalletRepositoryServiceImpl implements WalletRepositoryService {
 
     @Override
     public Optional<WalletModel> findByUserId(Long userId) {
-        return walletJpaRepository.findById(userId).map(walletMapper::toModel);
+        return walletJpaRepository.findByUserId(userId).map(walletMapper::toModel);
     }
 
     @Override
     public WalletModel save(WalletModel walletModel) {
         Wallet wallet = walletMapper.toEntity(walletModel);
-        return walletMapper.toModel(walletJpaRepository.save(wallet));
+        return walletMapper.toModel(walletJpaRepository.saveAndFlush(wallet));
     }
 }

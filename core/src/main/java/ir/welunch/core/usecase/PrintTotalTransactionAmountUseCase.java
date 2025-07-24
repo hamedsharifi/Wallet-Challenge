@@ -10,10 +10,11 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class PrintTotalTransactionAmountUseCase {
 
-    private TransactionRepositoryService transactionRepositoryService;
+    private final TransactionRepositoryService transactionRepositoryService;
 
-    public void execute(LocalDateTime start, LocalDateTime end) {
+    public Long execute(LocalDateTime start, LocalDateTime end) {
         Long sum = transactionRepositoryService.sumAmountBetween(start, end);
         System.out.println(sum);
+        return sum;
     }
 }

@@ -13,6 +13,7 @@ import ir.welunch.core.repository.WalletRepositoryService;
 import ir.welunch.core.annotation.UseCase;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import java.util.UUID;
 
 
@@ -33,13 +34,12 @@ public class AddMoneyToWalletUseCase {
             throw new ApplicationException("bad_user_input", "You entered an invalid user id or amount");
         }
 
-        WalletModel wallet = walletRepositoryService.findByUserId(userId)
-                .orElseGet(() -> WalletModel.builder()
-                        .userId(userId)
-                        .balance(0L)
-                        .build());
+        Optional<WalletModel> wallet = walletRepositoryService.findByUserId(userId);
+        if (wallet.isEmpty()) {
+            throw new ApplicationException("wallet_not_found", "Wallet not found for this user");
+        }
 
-        long newBalance = wallet.getBalance() + amount;
+        long newBalance = wallet.get().getBalance() + amount;
         if (newBalance < 0) {
             throw new ApplicationException("wallet_insufficient_balance", "Insufficient balance for withdrawal");
         }
@@ -47,7 +47,7 @@ public class AddMoneyToWalletUseCase {
         String referenceId = UUID.randomUUID().toString();
 
         TransactionModel transaction = TransactionModel.builder()
-                .wallet(wallet)
+                .wallet(wallet.get())
                 .amount(amount)
                 .type(amount >= 0 ? TransactionType.DEPOSIT : TransactionType.WITHDRAW)
                 .referenceId(referenceId)
@@ -57,9 +57,9 @@ public class AddMoneyToWalletUseCase {
 
         transactionRepositoryService.save(transaction);
 
-        wallet.setBalance(newBalance);
-        wallet.setUpdatedAt(LocalDateTime.now());
-        walletRepositoryService.save(wallet);
+        wallet.get().setBalance(newBalance);
+        wallet.get().setUpdatedAt(LocalDateTime.now());
+        walletRepositoryService.save(wallet.get());
 
         return new AddMoneyToWalletResponse(referenceId);
     }

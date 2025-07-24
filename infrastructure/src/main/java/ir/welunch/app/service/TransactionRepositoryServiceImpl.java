@@ -14,8 +14,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class TransactionRepositoryServiceImpl implements TransactionRepositoryService {
-    private TransactionJpaRepository transactionJpaRepository;
-    private TransactionMapper transactionMapper;
+
+    private final TransactionMapper transactionMapper;
+    private final TransactionJpaRepository transactionJpaRepository;
 
     @Override
     public TransactionModel save(TransactionModel transactionModel) {
